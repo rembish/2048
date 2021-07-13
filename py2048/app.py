@@ -46,11 +46,11 @@ class Application:
             if self._grid.move_right():
                 tile = self._grid.place_tile()
         elif pressed_keys[K_UP]:
-            self._grid.move_up()
-            tile = self._grid.place_tile()
+            if self._grid.move_up():
+                tile = self._grid.place_tile()
         elif pressed_keys[K_DOWN]:
-            self._grid.move_down()
-            tile = self._grid.place_tile()
+            if self._grid.move_down():
+                tile = self._grid.place_tile()
 
         if tile is None:
             self._running = False
